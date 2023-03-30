@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Detail ID: {{detail.id}}</h1>
+
+<!-- 
+         {{detail.created_at}}
+         {{detail.first_name}}
+         {{detail.last_name}}
+         {{detail.email}}
+         {{detail.phone}}
+         {{detail.address}}
+         {{detail.city}}
+         {{detail.state}}
+         {{detail.zipcode}} -->
+
+<div class="card">
+	<h5 class="card-header"><strong>Name: </strong> {{detail.first_name}} {{detail.last_name}}</h5>
+	<div class="card-body">
+		<p class="card-text"><strong>Email: </strong>{{detail.email}}</p>
+		<p class="card-text"><strong>Phone: </strong>{{detail.phone}}</p>
+        <p class="card-text"><strong>Address: </strong>{{detail.address}}</p>
+        <p class="card-text"><strong>City: </strong>{{detail.city}}</p>
+        <p class="card-text"><strong>State: </strong>{{detail.state}}</p>
+        <p class="card-text"><strong>Zipcode: </strong>{{detail.zipcode}}</p>
+        <p class="card-text"><strong>Created At: </strong>{{detail.created_at}}</p>
+    </div>
+</div>
+
+<br/></br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_detail' detail.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_detail' detail.id %}" class="btn btn-danger">Update Record</a>
+
+{% endblock %}
